@@ -16,7 +16,7 @@ except Exception:
 # ----------------- CONFIGURACIÓN -----------------
 
 
-ESPERA_CORTA = 1
+ESPERA_CORTA = 1.5
 ESPERA_CAMBIO_VENTANA = 0.4     # Espera tras Alt+Tab, para que la ventana tome el foco
 
 pyautogui.FAILSAFE = True
@@ -81,12 +81,12 @@ def main():
         pyautogui.press('tab') 
         pyautogui.press('tab') 
         pyautogui.press('tab') 
-        time.sleep(ESPERA_CORTA)
+        time.sleep(ESPERA_CORTA+ESPERA_CORTA/2)
 
         # 5. abajo una vez
         
         pyautogui.press('down')          # elije la primera opcion que es bogota      
-        
+        time.sleep(ESPERA_CORTA/2)
 
         # 6. Enter
         enter()
@@ -94,10 +94,11 @@ def main():
         # 7. Tab 2 veces
         pyautogui.press('tab') 
         pyautogui.press('tab') 
-        time.sleep(ESPERA_CORTA)
+        time.sleep(ESPERA_CORTA+ESPERA_CORTA/2)
 
         # 8. abajo una vez
         pyautogui.press('down')
+        time.sleep(ESPERA_CORTA/2)
 
         # 9. Enter
         enter()
@@ -125,14 +126,17 @@ def main():
         # 16. Tab 2 veces
         pyautogui.press('tab') 
         pyautogui.press('tab') 
+        pyautogui.press('tab') 
 
         # 17.Cambia ventana
         cambiar_ventana()
+
 
         # 18. siguiente codigo
         pyautogui.press('right') 
         pyautogui.press('right') 
         pyautogui.press('down')
+
 
     print("Proceso terminado.")
 
